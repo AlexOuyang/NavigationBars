@@ -1,0 +1,140 @@
+@import "compass/css3";
+
+
+/*creates navigation bar body*/
+body {
+  background-color: #8a8a8a;
+  background-image: url(http://www.ipad-mini-wallpapers.com/uploads/allimg/c130203/135bI362950-1JK.jpg);
+  background-size:100%;
+  color: #F5F5F5;
+  font-family: 'Open Sans', sans-serif; 
+  line-height: 1.4;
+  .header-demo {
+    height: 48px;
+    background-color: #333333;
+  }
+  p {
+    font-size:40px;
+  }
+}
+
+
+/*creates Menu button */
+.menu-link {
+  color: white;
+  text-shadow: none;
+  background-color: black;
+  padding: 12px 12px 0;
+  height: 48px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  /*set the menu list on top*/
+  z-index: 1001;
+  &:hover {
+    text-decoration: none;
+    background-color: #222222;
+  }
+}
+
+/*creates the collapsable list*/
+.menu li a {
+  color: #999999;
+  text-shadow: none;
+  text-decoration: none;
+  background-color: #222222;
+  display: inline-block;
+  height: 32px;
+  line-height: 26px;
+  padding: 3px;
+  border-bottom: 1px solid #333333;
+  width: 100%;
+  &:hover {
+    color: #aaa;
+    background-color: #333333;
+  }
+}
+
+body:not(:target) #menu {
+  margin: 0;
+  padding-top: 48px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1000;
+  li {
+    width: 100%;
+    height: 0;
+    line-height: 0;
+    overflow: hidden;
+    -webkit-transition: height 0.25s;
+    -moz-transition: height 0.25s;
+    -o-transition: height 0.25s;
+    transition: height 0.25s;
+  }
+}
+
+body:not(:target) #menu:target {
+  z-index: 1001;
+  li {
+    height: 32px;
+    line-height: auto;
+    overflow: visible;
+    -webkit-transition: height 0.25s;
+    -moz-transition: height 0.25s;
+    -o-transition: height 0.25s;
+    transition: height 0.25s;
+  }
+  .back {
+    height: 0;
+    line-height: 0;
+    a {
+      width: 100%;
+      background-color: transparent;
+      border: none;
+      height: auto;
+      position: absolute;
+      top: -1000px;
+      bottom: -1000px;
+      left: 0;
+      right: 0;
+      text-indent: -1000px;
+      z-index: -1;
+    }
+  }
+}
+
+
+
+@media (min-width: 1000px) {
+  .menu-link {
+    display: none;
+  }
+  /*creates and display the non-collapsable list*/
+  body:not(:target) #menu {
+    padding-top: 0;
+    li {
+      display: inline;
+      border: none;
+       a {
+        color: #999999;
+        font-weight: bold;
+        line-height: 20px;
+        padding: 12px;
+        height: 32px;
+        width: auto;
+        border: none;
+        background-color: transparent;
+        &:hover {
+          transition: 0.5s;
+          color: black;
+        }
+        .back {
+          transition: 1s;
+          display:none;
+        }
+      }
+    }
+  }
+}

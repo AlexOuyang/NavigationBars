@@ -1,4 +1,4 @@
 Navigation-Bars-
 ================
 
-A collection of Navigation bars
+A collection of Navigation bar examples with Demos.
